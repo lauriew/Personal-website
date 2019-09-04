@@ -1,2 +1,240 @@
-Point to main website <a 
-href="http://collaboration.csc.ncsu.edu/laurie/">http://collaboration.csc.ncsu.edu/laurie/</a> 
+---
+layout: default
+---
+
+<img align="right" hspace="10" vspace="10" src="images/enck.jpg" border="1" alt="William Enck" />
+
+<p>
+I am an Associate Professor in the Department of <a
+  href="http://www.csc.psu.edu">Computer Science</a> at <a
+  href="http://www.ncsu.edu">NC State University</a> and director of the <a href="https://wspr.csc.ncsu.edu">Wolfpack Security and Privacy Research (WSPR)</a> laboratory. I earned my Ph.D. and
+M.S. in Computer Science and Engineering from the Pennsylvania State University
+in 2011 and 2006, respectively, and my B.S. in Computer Engineering from Penn
+State in 2004.
+</p>
+
+<p>
+My research investigates access control in emerging and complex systems such as those found in mobile platforms, Internet of Things (IoT), networks, and cloud infrastructure.
+These investigations include studying the need for access control through application analysis,
+the correctness of access control enforcement and policy,
+and the incorporation of new access control primitives.
+(<a href="bio.html">Short Bio</a>)
+</p>
+
+<!--
+<p>
+My research focuses on the design, optimization, and measurement of
+security for computing platforms, specifically on mobile phones, and the
+complex environments in which they operate. Through the design and
+evaluation of practical enhancements to existing architectures, my
+research seeks to improve security guarantees in commodity computer
+systems. (<a href="bio.html">Short Bio</a>)
+</p>
+-->
+
+<h3>Quick Links</h3>
+<ul>
+  <li><a href="http://wspr.csc.ncsu.edu/weir/">Weir</a> practical enforcement of information flow in Android</li>
+  <li>ASM research at <a href="http://www.androidsecuritymodules.org">androidsecuritymodules.org</a></li>
+  <li>NativeWrap privacy tool <a href="http://research.csc.ncsu.edu/security/nativewrap">source code</a> and app on the <a href="https://play.google.com/store/apps/details?id=edu.ncsu.nativewrap">Google Play Store</a></li>
+  <li><a href="https://sites.google.com/site/whypermission/">WHYPER</a> natural language processing (NLP) of app descriptions</li>
+  <li>TaintDroid research at <a href="http://www.appanalysis.org">appanalysis.org</a></li>
+  <li>Android app decompliation at <a href="http://siis.cse.psu.edu/ded/">siis.cse.psu.edu/ded</a></li>
+</ul>
+
+<!--
+<p>
+<b><font color="red">Note:</font></b> <i>I am always looking for strong students with an
+  interest in systems security. Students must have a strong technical
+  background, be comfortable with systems work, and be prepared to work hard.
+  If you are not a student at NC State and are interested in my research,
+  please <a href="http://www.ncsu.edu/grad/admissions/index.php">apply</a> to
+  the program.</i> 
+</p>
+<p><i>
+To be an efficient systems researcher, you must know how to build the "glue."
+Glue helps you compose existing software into a system, automate analysis, and
+process data and results. It is highly recommended that you make yourself
+familiar with the <a href="http://linuxcommand.org/">UNIX/Linux command
+  line</a>, shell scripting (e.g., BASH scripting), and at least one more
+powerful scripting language such as Perl or Python.</i>
+</p>
+-->
+
+<h2>Contact Information</h2>
+
+<p>
+<em>Office</em>: 3260 Engineering Building II<br/>
+<em>Phone</em>: (919) 513-7905<br/>
+<em>Email</em>: whenck at ncsu.edu
+</p>
+
+
+<table width="100%">
+  <tr>
+    <td width="50%" valign="top">
+      <b>Postal Mail</b>
+      <p>
+	Department of Computer Science <br/>
+	EB2, Rm 3260, Box 8206 <br/>
+	North Carolina State University <br/>
+	Raleigh, NC 27695-8206, USA <br/>
+      </p>
+    </td>
+    <td width="50%" valign="top">
+      <b>Deliveries</b>
+      <p>
+	3320 Engineering Building II <br/>
+	890 Oval Dr.  <br/>
+	Raleigh, NC 27695-8206, USA <br/>
+      </p>
+    </td>
+  </tr>
+</table>
+
+<p>
+<b>Office Hours</b> <i>(Spring 2019)</i>: Tuesdays, 1:30-2:30pm
+</p>
+
+<h2>Students</h2>
+
+
+{% if site.data.students.current.phd %}
+### Current PhD Students
+<ul>
+{% for student in site.data.students.current.phd %}
+<li>
+  {% if student.url %}
+    <a href="{{ student.url }}">{{ student.name }}</a> <i>(expected {{ student.expected }})</i>
+  {% else %}
+    {{ student.name }} <i>(expected {{ student.expected }})</i>
+  {% endif %}
+  {% if student.coadvisor %}
+    [co-advised with <a href="{{ site.data.advisors[student.advisor].url }}">{{ site.data.advisors[student.advisor].name }}</a>]
+  {% endif %}
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if site.data.students.current.ms %}
+### Current Masters Students
+<ul>
+{% for student in site.data.students.current.ms %}
+<li>
+  {% if student.url %}
+    <a href="{{ student.url }}">{{ student.name }}</a> <i>(expected {{ student.expected }})</i>
+  {% else %}
+    {{ student.name }} <i>(expected {{ student.expected }})</i>
+  {% endif %}
+  {% if student.coadvisor %}
+    [co-advised with <a href="{{ site.data.advisors[student.coadvisor].url }}">{{ site.data.advisors[student.coadvisor].name }}</a>]
+  {% endif %}
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if site.data.students.past.phd %}
+### Past PhD Students
+<ul>
+{% for student in site.data.students.past.phd %}
+<li>
+  {% if student.url %}
+    <a href="{{ student.url }}">{{ student.name }}</a> <i>({{ student.graduated }})</i>
+  {% else %}
+    {{ student.name }} <i>({{ student.graduated }})</i>
+  {% endif %}
+  {% if student.coadvisor %}
+    [co-advised with <a href="{{ site.data.advisors[student.coadvisor].url }}">{{ site.data.advisors[student.coadvisor].name }}</a>]
+  {% endif %}
+  {% if student.job %}
+    (now {{ student.job }})
+  {% endif %}
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+<h2>Recent Professional Activities</h2>
+
+<ul>
+<li><i>PC co-Chair</i>, 2018 {{ site.data.venues['sec'].name }}</li>
+<li><i>Associate Editor</i>, 2015-present {{ site.data.venues['toit'].name }}</li>
+<li><i>Department Editor</i>, 2016-present {{ site.data.venues['spmag'].name }}</li>
+<li><i>PC co-Chair</i>, 2017 {{ site.data.venues['woot'].name }}</li>
+<li><i>Student PC co-Chair</i>, 2017 {{ site.data.venues['oakland'].name }}</li>
+<li><i>Shadow PC co-Chair</i>, 2017 {{ site.data.venues['asiaccs'].name }}</li>
+<li><i>PC co-Chair</i>, 2016 {{ site.data.venues['wisec'].name }}</li>
+<li><i>Program Committee</i>, 2020 {{ site.data.venues['ndss'].name }}</li>
+<li><i>Program Committee</i>, 2019 {{ site.data.venues['fc'].name }}</li>
+<li><i>Program Committee</i>, 2019 {{ site.data.venues['sec'].name }}</li>
+<li><i>Program Committee</i>, 2020 {{ site.data.venues['sec'].name }}</li>
+<!--<li><i>Program Committee</i>, 2017 {{ site.data.venues['oakland'].name }}</li>-->
+<!--<li><i>Program Committee</i>, 2016 {{ site.data.venues['ccs'].name }}</li>-->
+<li><i>Program Committee</i>, 2019 {{ site.data.venues['wisec'].name }}</li>
+<li><i>Program Committee</i>, 2019 {{ site.data.venues['acsac'].name }}</li>
+</ul>
+
+<h2>News</h2>
+
+{% for item in site.data.news limit:5 %}
+<p>
+<b>{{ item.date }}:</b> {{ item.content }}
+</p>
+{% endfor %}
+
+[(more news)]({{ site.baseurl }}{% link news.md %})
+
+<h2>Professional Highlights</h2>
+
+<ul>
+
+  <li>I am an <a
+    href="http://www.csc.ncsu.edu/directories/faculty_info.php?id=2444">Associate
+    Professor</a> in the department of <a
+    href="http://www.csc.ncsu.edu">Computer Science</a> at the <a
+    href="http://www.ncsu.edu">North Carolina State University</a></li>
+
+  <li>I am the director of the Wolfpack Security and Privacy Research (<a href="https://wspr.csc.ncsu.edu">WSPR</a>) laboratory.</li>
+
+  <li>I am a <a href="CAREER.html">National Science Foundation CAREER Award</a> winner (CNS-1253346).</li>
+  
+  <li>My work has appeared in many major technical venues, including USENIX Security,
+    ACM CCS, USENIX OSDI, USENIX ATC, ACM MobiCom, and NDSS.</li>
+
+  <li>I am a co-founder of the ACM CCS Workshop on Security and Privacy in Smartphones and Mobile Devices (<a href="http://www.spsm-workshop.org/">SPSM</a>)</li>
+  
+  <li>My research has been covered by <a
+    href="http://www.nytimes.com/2005/10/05/technology/05phone.html?ex=1286164800&amp;en=d917b9cd43dfaa31&amp;ei=5090&amp;partner=rssuserland&amp;emc=rss">The
+    New York Times</a> and <a
+    href="http://news.cnet.com/8301-27080_3-20018102-245.html">CNET</a> among
+  other international press venues. I was also interviewed by <a
+    href="http://liveshots.blogs.foxnews.com/2011/01/08/becareful-what-you-download/">FOX
+    News</a> (<a
+    href="http://video.foxnews.com/v/4489925/be-careful-what-you-download/">video</a>).</li>
+
+  <li>I received my Ph.D. from the <a href="http://www.cse.psu.edu">Computer
+    Science and Engineering</a> department at the <a
+    href="http://www.psu.edu">Pennsylvania State University</a> in May of
+  2011.</li>
+
+  <li>I am a recipient of the Penn State University Alumni Association
+  Dissertation Award for 2010-2011.</li>
+  
+  <li>I am a founding member and former lead graduate student of the <a
+    href="http://siis.cse.psu.edu/">Systems and Internet Infrastructure
+    Security Laboratory</a>.</li>
+
+  <li>I worked as a research intern at AT&amp;T Research and Intel Labs.</li>
+
+  <li>I was a member of 2007 EVEREST academic study [<a
+    href="http://www.sos.state.oh.us/SOS/upload/everest/14-AcademicFinalEVERESTReport.pdf">pdf</a>]
+  of voting equipment sponsored by the Ohio Secretary of State.</li>
+
+  <li>My <a href="http://www.oakland.edu/enp/">Erd&ouml;s number</a> is 3
+  (Paul Erd&ouml;s--Fan Chung--William Aiello--Me).</li>
+
+</ul>
+
+
